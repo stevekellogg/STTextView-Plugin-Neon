@@ -24,6 +24,7 @@ import TreeSitterJSON
 import TreeSitterJSONQueries
 import TreeSitterMarkdown
 import TreeSitterMarkdownQueries
+import TreeSitterMermaid
 import TreeSitterPHP
 import TreeSitterPHPQueries
 import TreeSitterPython
@@ -55,6 +56,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
     case javascript
     case json
     case markdown
+    case mermaid
     case php
     case python
     case ruby
@@ -89,6 +91,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             tree_sitter_json()
         case .markdown:
             tree_sitter_markdown()
+        case .mermaid:
+            tree_sitter_mermaid()
         case .php:
             tree_sitter_php()
         case .python:
@@ -134,6 +138,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             TreeSitterJSONQueries.Query.highlightsFileURL
         case .markdown:
             TreeSitterMarkdownQueries.Query.highlightsFileURL
+        case .mermaid:
+            Bundle.module.url(forResource: "highlights", withExtension: "scm", subdirectory: "mermaid")
         case .php:
             TreeSitterPHPQueries.Query.highlightsFileURL
         case .python:
@@ -178,6 +184,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
         case .json:
             nil
         case .markdown:
+            nil
+        case .mermaid:
             nil
         case .php:
             nil

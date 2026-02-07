@@ -14,7 +14,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/STTextView", from: "2.2.2"),
         .package(url: "https://github.com/kylemacomber/Neon", revision: "ce8d252"),
-        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.9.0")
+        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.9.0"),
+        .package(url: "https://github.com/monaqa/tree-sitter-mermaid", branch: "master")
     ],
     targets: [
         .target(
@@ -86,6 +87,8 @@ let package = Package(
                 .target(name: "TreeSitterTypeScriptQueries"),
                 .target(name: "TreeSitterYAML"),
                 .target(name: "TreeSitterYAMLQueries")            
+                .product(name: "TreeSitterMermaid", package: "tree-sitter-mermaid"),
+                .target(name: "TreeSitterMermaidQueries"),
             ]
         ),
         .target(name: "TreeSitterAstro", cSettings: [.headerSearchPath("src")]),
@@ -164,5 +167,6 @@ let package = Package(
         .target(name: "TreeSitterTypeScriptQueries", resources: [.copy("highlights.scm"), .copy("locals.scm"), .copy("tags.scm")]),
         .target(name: "TreeSitterYAML", exclude: ["src/schema.generated.cc"], cSettings: [.headerSearchPath("src")]),
         .target(name: "TreeSitterYAMLQueries", resources: [.copy("highlights.scm")]),
+        .target(name: "TreeSitterMermaidQueries", path: "queries/mermaid", resources: [.copy("highlights.scm"), .copy("injections.scm")]),
     ]
 )
