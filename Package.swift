@@ -86,7 +86,7 @@ let package = Package(
                 .target(name: "TreeSitterTypeScript"),
                 .target(name: "TreeSitterTypeScriptQueries"),
                 .target(name: "TreeSitterYAML"),
-                .target(name: "TreeSitterYAMLQueries")            
+                .target(name: "TreeSitterYAMLQueries"),            
                 .product(name: "TreeSitterMermaid", package: "tree-sitter-mermaid"),
                 .target(name: "TreeSitterMermaidQueries"),
             ]
