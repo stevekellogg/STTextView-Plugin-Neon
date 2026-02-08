@@ -25,6 +25,7 @@ import TreeSitterJSONQueries
 import TreeSitterMarkdown
 import TreeSitterMarkdownQueries
 import TreeSitterMermaid
+import TreeSitterMermaidQueries
 import TreeSitterPHP
 import TreeSitterPHPQueries
 import TreeSitterPython
@@ -139,7 +140,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
         case .markdown:
             TreeSitterMarkdownQueries.Query.highlightsFileURL
         case .mermaid:
-            Bundle.module.url(forResource: "highlights", withExtension: "scm", subdirectory: "mermaid")
+            TreeSitterMermaidQueries.Query.highlightsFileURL
         case .php:
             TreeSitterPHPQueries.Query.highlightsFileURL
         case .python:

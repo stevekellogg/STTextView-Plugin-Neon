@@ -167,6 +167,6 @@ let package = Package(
         .target(name: "TreeSitterTypeScriptQueries", resources: [.copy("highlights.scm"), .copy("locals.scm"), .copy("tags.scm")]),
         .target(name: "TreeSitterYAML", exclude: ["src/schema.generated.cc"], cSettings: [.headerSearchPath("src")]),
         .target(name: "TreeSitterYAMLQueries", resources: [.copy("highlights.scm")]),
-        .target(name: "TreeSitterMermaidQueries", path: "queries/mermaid", resources: [.copy("highlights.scm"), .copy("injections.scm")]),
+        .target(name: "TreeSitterMermaidQueries", resources: [.copy("highlights.scm"), .copy("injections.scm")]),
     ]
 )
